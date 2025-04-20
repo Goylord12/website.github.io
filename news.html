@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Новости — Врекламе Криэйтив</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ <div class="top-info">
+    <div class="container">
+      <span>info@вашеагентство.ком</span>
+      <span class="phone">+7 (9372) 32‑39‑39</span>
+    </div>
+  </div>
+  <header>
+    <div class="container header-inner">
+      <div class="logo-search">
+        <img src="css/logo-vr-2.png" alt="Врекламе Криэйтив" class="logo-img">
+        <form class="search-form">
+          <input type="text" placeholder="Поиск...">
+          <button type="submit">🔍</button>
+        </form>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="services.html">Услуги</a></li>
+          <li><a href="index.html">О нас</a></li>
+          <li><a href="news.html">Новости</a></li>
+          <li><a href="articles.html">Статьи</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="career.html">Карьера</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <main class="container">
+    <h2 class="section-title">Новости</h2>
+    <form id="filterForm" class="news-filter">
+      <select id="year" name="year">
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+      </select>
+      <select id="month" name="month">
+        <option value="10">Октябрь</option>
+        <option value="09">Сентябрь</option>
+        <option value="08">Август</option>
+      </select>
+      <button type="submit" class="btn">Фильтровать</button>
+    </form>
+    <div class="news-list">
+      <!-- Пример новостей -->
+      <div class="card news-item" data-year="2024" data-month="10">
+        <div class="img-placeholder"></div>
+        <h3>Новость 1 – Октябрь 2024</h3>
+        <p>Описание новости 1...</p>
+      </div>
+      <div class="card news-item" data-year="2024" data-month="09">
+        <div class="img-placeholder"></div>
+        <h3>Новость 2 – Сентябрь 2024</h3>
+        <p>Описание новости 2...</p>
+      </div>
+      <div class="card news-item" data-year="2023" data-month="08">
+        <div class="img-placeholder"></div>
+        <h3>Новость 3 – Август 2023</h3>
+        <p>Описание новости 3...</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <img src="css/logo-vr-2.svg" alt="Врекламе Криэйтив" class="logo-img">
+      <nav>
+        <ul>
+          <li><a href="news.html">Новости</a></li>
+          <li><a href="index.html">О нас</a></li>
+          <li><a href="services.html">Услуги</a></li>
+          <li><a href="articles.html">Статьи</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="career.html">Карьера</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
