@@ -1,104 +1,99 @@
 // js/script.js
+document.addEventListener('DOMContentLoaded', () => {
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Фильтрация новостей по дате
+  /* ---------- ГЛОБАЛЬНЫЙ ПОИСК (форма в шапке) ---------- */
+  document.querySelectorAll('header .search-form').forEach(form => {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const q = form.querySelector('input').value.trim();
+      if (q) window.location.href = `search.html?q=${encodeURIComponent(q)}`;
+    });
+  });
+
+  /* ---------- ПОИСК ПО СТАТЬЯМ (articles.html) ---------- */
+  const articleSearchForm = document.getElementById('articlesSearch');
+  if (articleSearchForm) {
+    const input = document.getElementById('articlesInput');
+    articleSearchForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const q = input.value.toLowerCase();
+      document.querySelectorAll('.article-item').forEach(card => {
+        card.style.display = card.textContent.toLowerCase().includes(q) ? 'block' : 'none';
+      });
+    });
+  }
+
+  /* ---------- ФИЛЬТР НОВОСТЕЙ (news.html) ---------- */
   const filterForm = document.getElementById('filterForm');
   if (filterForm) {
-    filterForm.addEventListener('submit', function(e) {
+    filterForm.addEventListener('submit', e => {
       e.preventDefault();
-      const year = document.getElementById('year').value;
-      const month = document.getElementById('month').value;
-      const newsItems = document.querySelectorAll('.news-item');
-      newsItems.forEach(item => {
-        if (item.getAttribute('data-year') === year && item.getAttribute('data-month') === month) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
+      const yr = document.getElementById('year').value;
+      const mo = document.getElementById('month').value;
+      document.querySelectorAll('.news-item').forEach(item => {
+        item.style.display = (item.dataset.year === yr && item.dataset.month === mo) ? 'block' : 'none';
       });
     });
   }
 
-  // Поиск статей
-  const searchForm = document.getElementById('searchForm');
-  if (searchForm) {
-    searchForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const query = document.getElementById('searchInput').value.toLowerCase();
-      const articles = document.querySelectorAll('.article-item');
-      articles.forEach(article => {
-        const text = article.textContent.toLowerCase();
-        if (text.includes(query)) {
-          article.style.display = 'block';
-        } else {
-          article.style.display = 'none';
-        }
-      });
+  /* ---------- КОРЗИНА ШТЕНДЕРОВ ---------- */
+  let cart = [];
+  const cartList = document.getElementById('cartItems');
+  document.querySelectorAll('.add-to-cart').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.product-item');
+      cart.push({ title: card.querySelector('h3').innerText, price: card.dataset.price });
+      renderCart();
+    });
+  });
+  function renderCart() {
+    if (!cartList) return;
+    cartList.innerHTML = '';
+    cart.forEach(it => {
+      const li = document.createElement('li');
+      li.textContent = `${it.title} — ${it.price} ₽`;
+      cartList.appendChild(li);
+    });
+  }
+  const checkout = document.getElementById('checkout');
+  if (checkout) {
+    checkout.addEventListener('click', () => {
+      alert(cart.length ? 'Заказ оформлен! Наш менеджер свяжется с вами.' : 'Ваша корзина пуста.');
+      cart = [];
+      renderCart();
     });
   }
 
-  // Обработка формы запроса рекламной кампании
+  /* ---------- ФОРМЫ (кампания, контакты, отклик) ---------- */
   const campaignForm = document.getElementById('campaignForm');
   if (campaignForm) {
-    campaignForm.addEventListener('submit', function(e) {
+    campaignForm.addEventListener('submit', e => {
       e.preventDefault();
-      // Здесь можно добавить AJAX-запрос
-      document.getElementById('campaignResult').innerText = 'Ваш запрос отправлен. Мы свяжемся с вами в ближайшее время.';
+      document.getElementById('campaignResult').innerText =
+        'Ваш запрос отправлен. Мы свяжемся с вами в ближайшее время.';
       campaignForm.reset();
     });
   }
 
-  // Работа с корзиной для штендеров
-  let cart = [];
-  const cartItemsContainer = document.getElementById('cartItems');
-  const addToCartButtons = document.querySelectorAll('.add-to-cart');
-  addToCartButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const product = this.parentElement;
-      const title = product.querySelector('h3').innerText;
-      const price = product.getAttribute('data-price');
-      cart.push({ title, price });
-      renderCart();
-    });
-  });
-
-  function renderCart() {
-    if (cartItemsContainer) {
-      cartItemsContainer.innerHTML = '';
-      cart.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.innerText = `${item.title} — ${item.price} руб.`;
-        cartItemsContainer.appendChild(li);
-      });
-    }
-  }
-
-  const checkoutBtn = document.getElementById('checkout');
-  if (checkoutBtn) {
-    checkoutBtn.addEventListener('click', function() {
-      if (cart.length > 0) {
-        alert('Заказ оформлен. Наш менеджер свяжется с вами для уточнения деталей заказа.');
-        cart = [];
-        renderCart();
-      } else {
-        alert('Ваша корзина пуста.');
-      }
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Сообщение отправлено! Мы ответим как можно скорее.');
+      contactForm.reset();
     });
   }
 
-  // Открытие формы отклика для вакансии
   const openApplication = document.getElementById('openApplication');
   if (openApplication) {
-    openApplication.addEventListener('click', function() {
-      const form = document.getElementById('applicationForm');
-      form.style.display = form.style.display === 'none' || form.style.display === '' ? 'block' : 'none';
+    openApplication.addEventListener('click', () => {
+      const f = document.getElementById('applicationForm');
+      f.style.display = (f.style.display === 'none' || !f.style.display) ? 'block' : 'none';
     });
   }
-
-  // Обработка формы отклика на вакансию
   const applicationForm = document.getElementById('applicationForm');
   if (applicationForm) {
-    applicationForm.addEventListener('submit', function(e) {
+    applicationForm.addEventListener('submit', e => {
       e.preventDefault();
       document.getElementById('applicationResult').innerText = 'Ваш отклик отправлен. Спасибо!';
       applicationForm.reset();

@@ -7,84 +7,96 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
- <div class="top-info">
-    <div class="container">
-      <span>info@вашеагентство.ком</span>
-      <span class="phone">+7 (9372) 32‑39‑39</span>
-    </div>
-  </div>
+  <!-- верхний инфо‑бар -->
+  <div class="top-info"><div class="container"><span>info@вашеагентство.ком</span><span class="phone">+7 (9372) 32‑39‑39</span></div></div>
+
+  <!-- шапка -->
   <header>
     <div class="container header-inner">
       <div class="logo-search">
         <img src="css/logo-vr-2.png" alt="Врекламе Криэйтив" class="logo-img">
-        <form class="search-form">
-          <input type="text" placeholder="Поиск...">
-          <button type="submit">🔍</button>
-        </form>
+        <form class="search-form"><input type="text" placeholder="Поиск…"><button>🔍</button></form>
       </div>
       <nav>
         <ul>
-          <li><a href="services.html">Услуги</a></li>
-          <li><a href="index.html">О нас</a></li>
-          <li><a href="news.html">Новости</a></li>
-          <li><a href="articles.html">Статьи</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-          <li><a href="career.html">Карьера</a></li>
+          <li><a href="services.html">Услуги</a></li><li><a href="index.html">О&nbsp;нас</a></li>
+          <li><a href="news.html">Новости</a></li><li><a href="articles.html">Статьи</a></li>
+          <li><a href="contacts.html">Контакты</a></li><li><a href="career.html">Карьера</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-
   <main class="container">
     <h2 class="section-title">Новости</h2>
+
+    <!-- фильтр -->
     <form id="filterForm" class="news-filter">
-      <select id="year" name="year">
-        <option value="2024">2024</option>
-        <option value="2023">2023</option>
+      <select id="year"><option>2024</option><option>2023</option></select>
+      <select id="month">
+        <option value="10">Октябрь</option><option value="09">Сентябрь</option>
+        <option value="07">Июль</option><option value="08">Август</option>
       </select>
-      <select id="month" name="month">
-        <option value="10">Октябрь</option>
-        <option value="09">Сентябрь</option>
-        <option value="08">Август</option>
-      </select>
-      <button type="submit" class="btn">Фильтровать</button>
+      <button class="btn">Фильтровать</button>
     </form>
+
+    <!-- список новостей -->
     <div class="news-list">
-      <!-- Пример новостей -->
-      <div class="card news-item" data-year="2024" data-month="10">
-        <div class="img-placeholder"></div>
-        <h3>Новость 1 – Октябрь 2024</h3>
-        <p>Описание новости 1...</p>
-      </div>
-      <div class="card news-item" data-year="2024" data-month="09">
-        <div class="img-placeholder"></div>
-        <h3>Новость 2 – Сентябрь 2024</h3>
-        <p>Описание новости 2...</p>
-      </div>
-      <div class="card news-item" data-year="2023" data-month="08">
-        <div class="img-placeholder"></div>
-        <h3>Новость 3 – Август 2023</h3>
-        <p>Описание новости 3...</p>
-      </div>
+      <article class="news-item card" data-year="2024" data-month="10">
+        <img src="https://images.pexels.com/photos/6476260/pexels-photo-6476260.jpeg?auto=compress&cs=tinysrgb&w=600" alt="AR‑тренды" class="card-img">
+        <div class="news-content">
+          <h3>Эффективность рекламы выросла на 15 % (октябрь 2024)</h3>
+          <p>Благодаря оптимизации бюджета и креативным решениям конверсия кампаний поднялась на 15 %.</p>
+          <a href="content/news-oct2024.html" class="btn btn-sm">Читать далее</a>
+        </div>
+      </article>
+
+      <article class="news-item card" data-year="2024" data-month="09">
+        <img src="https://images.pexels.com/photos/267371/pexels-photo-267371.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Новый таргетинг" class="card-img">
+        <div class="news-content">
+          <h3>Соцсети представили умный таргетинг (сентябрь 2024)</h3>
+          <p>Маркетологи получили более точные настройки для поиска релевантной аудитории.</p>
+          <a href="content/news-sep2024.html" class="btn btn-sm">Читать далее</a>
+        </div>
+      </article>
+
+      <article class="news-item card" data-year="2024" data-month="07">
+        <img src="https://images.pexels.com/photos/1031700/pexels-photo-1031700.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Фестиваль" class="card-img">
+        <div class="news-content">
+          <h3>Летний фестиваль маркетинга 2024</h3>
+          <p>Эксперты обсудили рост контент‑маркетинга и аналитику данных.</p>
+          <a href="content/news-jul2024.html" class="btn btn-sm">Читать далее</a>
+        </div>
+      </article>
+
+      <article class="news-item card" data-year="2023" data-month="09">
+        <img src="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Исследование ROI" class="card-img">
+        <div class="news-content">
+          <h3>ROI digital‑рекламы вырос в 2023</h3>
+          <p>Исследование показало увеличение возврата инвестиций в онлайн‑рекламу.</p>
+          <a href="content/news-sep2023.html" class="btn btn-sm">Читать далее</a>
+        </div>
+      </article>
+
+      <article class="news-item card" data-year="2023" data-month="08">
+        <img src="https://images.pexels.com/photos/34639/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600" alt="Ребрендинг" class="card-img">
+        <div class="news-content">
+          <h3>Масштабный ребрендинг бренда Х (август 2023)</h3>
+          <p>Обновлён логотип, рекламные материалы и слоган под современную аудиторию.</p>
+          <a href="content/news-aug2023.html" class="btn btn-sm">Читать далее</a>
+        </div>
+      </article>
     </div>
   </main>
 
+  <!-- футер -->
   <footer>
     <div class="container">
       <img src="css/logo-vr-2.svg" alt="Врекламе Криэйтив" class="logo-img">
-      <nav>
-        <ul>
-          <li><a href="news.html">Новости</a></li>
-          <li><a href="index.html">О нас</a></li>
-          <li><a href="services.html">Услуги</a></li>
-          <li><a href="articles.html">Статьи</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-          <li><a href="career.html">Карьера</a></li>
-        </ul>
-      </nav>
+      <nav><ul><li><a href="news.html">Новости</a></li><li><a href="index.html">О&nbsp;нас</a></li><li><a href="services.html">Услуги</a></li><li><a href="articles.html">Статьи</a></li><li><a href="contacts.html">Контакты</a></li><li><a href="career.html">Карьера</a></li></ul></nav>
     </div>
   </footer>
+
   <script src="js/script.js"></script>
 </body>
 </html>

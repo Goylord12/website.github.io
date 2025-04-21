@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Заказать кампанию — Врекламе Криэйтив</title>
+  <title>Бренд-менеджер — Врекламе Криэйтив</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -36,14 +36,29 @@
   </header>
 
   <main class="container">
-    <h2 class="section-title">Запрос на кампанию</h2>
-    <form id="campaignForm" class="campaign-form">
-      <input type="text" id="name" placeholder="Имя" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <textarea id="details" rows="5" placeholder="Описание задачи" required></textarea>
+    <h2 class="section-title">Вакансия: Бренд-менеджер</h2>
+    <p><strong>Зарплата:</strong> от 45&nbsp;000&nbsp;₽.<br><strong>Опыт:</strong> 2+ года.<br><strong>Тип занятости:</strong> Полный рабочий день.</p>
+    <h3>Обязанности:</h3>
+    <ul>
+      <li>Разработка и реализация бренд-стратегии компании.</li>
+      <li>Координация рекламных кампаний для продвижения бренда.</li>
+      <li>Анализ рынка и конкурентов для укрепления позиций бренда.</li>
+    </ul>
+    <h3>Требования:</h3>
+    <ul>
+      <li>Высшее образование в сфере маркетинга, PR или связей с общественностью.</li>
+      <li>Опыт работы бренд-менеджером от 2 лет.</li>
+      <li>Знание современных маркетинговых инструментов и аналитики.</li>
+      <li>Креативность, отличные коммуникативные навыки, ответственность.</li>
+    </ul>
+    <button id="openApplication" class="btn">Оставить отклик</button>
+    <form id="applicationForm" class="application-form" style="display:none; margin-top: 20px;">
+      <input type="text" placeholder="Имя" required>
+      <input type="email" placeholder="Email" required>
+      <textarea rows="4" placeholder="Сопроводительное письмо" required></textarea>
       <button type="submit" class="btn">Отправить</button>
     </form>
-    <div id="campaignResult" class="form-result"></div>
+    <div id="applicationResult" class="form-result"></div>
   </main>
 
   <footer>
@@ -55,8 +70,8 @@
           <li><a href="index.html">О&nbsp;нас</a></li>
           <li><a href="news.html">Новости</a></li>
           <li><a href="articles.html">Статьи</a></li>
-          <li><a href="career.html">Карьера</a></li>
           <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="career.html">Карьера</a></li>
         </ul>
       </nav>
       <div class="legal">

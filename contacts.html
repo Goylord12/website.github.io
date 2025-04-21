@@ -7,62 +7,59 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
- <div class="top-info">
-    <div class="container">
-      <span>info@вашеагентство.ком</span>
-      <span class="phone">+7 (9372) 32‑39‑39</span>
-    </div>
-  </div>
- <header>
+  <!-- верхний инфо‑бар -->
+  <div class="top-info"><div class="container"><span>info@вашеагентство.ком</span><span class="phone">+7 (9372) 32‑39‑39</span></div></div>
+
+  <!-- шапка -->
+  <header>
     <div class="container header-inner">
       <div class="logo-search">
         <img src="css/logo-vr-2.png" alt="Врекламе Криэйтив" class="logo-img">
-        <form class="search-form">
-          <input type="text" placeholder="Поиск...">
-          <button type="submit">🔍</button>
-        </form>
+        <form class="search-form"><input type="text" placeholder="Поиск…"><button>🔍</button></form>
       </div>
       <nav>
         <ul>
-          <li><a href="services.html">Услуги</a></li>
-          <li><a href="index.html">О нас</a></li>
-          <li><a href="news.html">Новости</a></li>
-          <li><a href="articles.html">Статьи</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-          <li><a href="career.html">Карьера</a></li>
+          <li><a href="services.html">Услуги</a></li><li><a href="index.html">О&nbsp;нас</a></li>
+          <li><a href="news.html">Новости</a></li><li><a href="articles.html">Статьи</a></li>
+          <li><a href="contacts.html">Контакты</a></li><li><a href="career.html">Карьера</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-
+  <!-- контент -->
   <main class="container">
     <h2 class="section-title">Как с нами связаться</h2>
-    <p class="contact-text">Если у вас есть вопросы или предложения — напишите нам или позвоните по телефону.</p>
-    <form class="contact-form">
-      <input type="text" placeholder="Имя" required>
-      <input type="email" placeholder="Email" required>
+
+    <p class="contact-intro">
+      <strong>Мы всегда рады вашему обращению!</strong><br>
+      Если у вас есть вопросы, предложения или вы хотите обсудить возможности сотрудничества, не стесняйтесь связаться с нами.
+      Наша команда опытных специалистов поможет реализовать ваши бизнес‑идеи и достичь поставленных целей.
+    </p>
+
+    <form id="contactForm" class="contact-form">
+      <div class="contact-grid">
+        <input type="text" placeholder="Имя" required>
+        <input type="email" placeholder="Email" required>
+      </div>
       <textarea rows="5" placeholder="Сообщение" required></textarea>
-      <button type="submit" class="btn">Отправить</button>
+      <button class="btn">Отправить</button>
+      <p id="contactStatus" class="form-status"></p>
     </form>
-    <div class="map-placeholder img-placeholder">Карта</div>
   </main>
 
+  <!-- футер -->
   <footer>
     <div class="container">
       <img src="css/logo-vr-2.svg" alt="Врекламе Криэйтив" class="logo-img">
-      <nav>
-        <ul>
-          <li><a href="contacts.html">Контакты</a></li>
-          <li><a href="index.html">О нас</a></li>
-          <li><a href="services.html">Услуги</a></li>
-          <li><a href="news.html">Новости</a></li>
-          <li><a href="articles.html">Статьи</a></li>
-          <li><a href="career.html">Карьера</a></li>
-        </ul>
-      </nav>
+      <nav><ul>
+        <li><a href="contacts.html">Контакты</a></li><li><a href="index.html">О&nbsp;нас</a></li>
+        <li><a href="services.html">Услуги</a></li><li><a href="news.html">Новости</a></li>
+        <li><a href="articles.html">Статьи</a></li><li><a href="career.html">Карьера</a></li>
+      </ul></nav>
     </div>
   </footer>
+
   <script src="js/script.js"></script>
 </body>
 </html>

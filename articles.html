@@ -7,25 +7,29 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- верхний инфо‑бар -->
   <div class="top-info">
     <div class="container">
       <span>info@вашеагентство.ком</span>
-      <span class="phone">+7 (9372) 32‑39‑39</span>
+      <span class="phone">+7 (9372) 32‑39‑39</span>
     </div>
   </div>
- <header>
+
+  <!-- шапка -->
+  <header>
     <div class="container header-inner">
       <div class="logo-search">
         <img src="css/logo-vr-2.png" alt="Врекламе Криэйтив" class="logo-img">
+        <!-- Глобальный поиск (идентификатор не нужен) -->
         <form class="search-form">
-          <input type="text" placeholder="Поиск...">
+          <input type="text" placeholder="Поиск…">
           <button type="submit">🔍</button>
         </form>
       </div>
       <nav>
         <ul>
           <li><a href="services.html">Услуги</a></li>
-          <li><a href="index.html">О нас</a></li>
+          <li><a href="index.html">О&nbsp;нас</a></li>
           <li><a href="news.html">Новости</a></li>
           <li><a href="articles.html">Статьи</a></li>
           <li><a href="contacts.html">Контакты</a></li>
@@ -35,37 +39,56 @@
     </div>
   </header>
 
-
+  <!-- контент -->
   <main class="container">
     <h2 class="section-title">Статьи</h2>
-    <form id="searchForm" class="articles-filter">
-      <input type="text" id="searchInput" placeholder="Поиск по статьям…">
+
+    <!-- Поиск по статьям (уникальные id) -->
+    <form id="articlesSearch" class="articles-filter">
+      <input type="text" id="articlesInput" placeholder="Поиск по статьям…">
       <button type="submit" class="btn">Найти</button>
     </form>
+
     <div class="grid-5" id="articlesList">
+      <!-- Статья 1 -->
       <div class="card article-item">
-        <div class="img-placeholder"></div>
+        <img src="https://images.pexels.com/photos/210126/pexels-photo-210126.jpeg?auto=compress&cs=tinysrgb&w=600" alt="История рекламы" class="card-img">
         <h3>История развития рекламы</h3>
-        <p>Краткое описание...</p>
-        <button class="btn">Читать далее</button>
+        <p>Краткий экскурс в эволюцию рекламной индустрии — от печатных объявлений до цифрового маркетинга.</p>
+        <a href="content/history-of-advertising.html" class="btn">Читать далее</a>
       </div>
+      <!-- Статья 2 -->
       <div class="card article-item">
-        <div class="img-placeholder"></div>
-        <h3>Современные тренды в digital</h3>
-        <p>Краткое описание...</p>
-        <button class="btn">Читать далее</button>
+        <img src="https://images.pexels.com/photos/6476808/pexels-photo-6476808.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Digital‑тренды" class="card-img">
+        <h3>Современные тренды в digital</h3>
+        <p>Актуальные направления в digital‑маркетинге: соцсети, контент, большие данные и персонализация.</p>
+        <a href="content/digital-trends.html" class="btn">Читать далее</a>
       </div>
-      <!-- другие статьи -->
+      <!-- Статья 3 -->
+      <div class="card article-item">
+        <img src="https://images.pexels.com/photos/6476260/pexels-photo-6476260.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Выбор агентства" class="card-img">
+        <h3>Как выбрать рекламное агентство</h3>
+        <p>На что обратить внимание при выборе маркетингового агентства для долгосрочного сотрудничества.</p>
+        <a href="content/choose-agency.html" class="btn">Читать далее</a>
+      </div>
+      <!-- Статья 4 -->
+      <div class="card article-item">
+        <img src="https://unsplash.com/photos/fIq0tET6llw/download?force=true&w=600" alt="Будущее рекламы" class="card-img">
+        <h3>Будущее рекламы: прогнозы экспертов</h3>
+        <p>Каким будет рекламный ландшафт в ближайшие годы — технологии и новые подходы.</p>
+        <a href="content/future-of-advertising.html" class="btn">Читать далее</a>
+      </div>
     </div>
   </main>
 
+  <!-- футер -->
   <footer>
     <div class="container">
       <img src="css/logo-vr-2.svg" alt="Врекламе Криэйтив" class="logo-img">
       <nav>
         <ul>
           <li><a href="articles.html">Статьи</a></li>
-          <li><a href="index.html">О нас</a></li>
+          <li><a href="index.html">О&nbsp;нас</a></li>
           <li><a href="services.html">Услуги</a></li>
           <li><a href="news.html">Новости</a></li>
           <li><a href="contacts.html">Контакты</a></li>
@@ -74,6 +97,7 @@
       </nav>
     </div>
   </footer>
+
   <script src="js/script.js"></script>
 </body>
 </html>
