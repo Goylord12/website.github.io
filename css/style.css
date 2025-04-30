@@ -11,8 +11,26 @@ body {
   width: 95%;
   margin: 0 auto;
 }
+/* Стиль для всех ссылок mailto */
+a[href^="mailto:"] {
+  color: #ffffff;      /* здесь ваш цвет в HEX */
+  text-decoration: none; /* по желанию убрать подчеркивание */
+}
+
+/* При наведении */
+a[href^="mailto:"]:hover {
+  color: #53006d;
+}
+
 
 /* ВЕРХНИЙ ИНФО-БАР */
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
 .top-info {
   background: #7C3AED;
   padding: 10px 0;
@@ -475,4 +493,45 @@ main.container input, main.container textarea {
   .contact-grid { grid-template-columns: 1fr; }
   .contact-form { padding: 24px; }
   .contact-intro { font-size: 16px; padding: 20px; }
+}
+
+/* Для экранов уже 480px и меньше */
+@media (max-width: 479px) {
+  /* 1. Уменьшаем базовый размер шрифта */
+  html {
+    font-size: 14px;
+  }
+
+  /* 2. Уменьшаем горизонтальные отступы */
+  .container {
+    padding: 0 12px;
+  }
+
+  /* 3. Переводим сетки в один столбец */
+  .grid-5,
+  .promo-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;  /* расстояние между элементами */
+  }
+
+  /* 4. Кнопки и поля занимают всю ширину */
+  .btn,
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+  }
+
+  /* 5. Логотип не выходит за границы */
+  .logo-img {
+    max-width: 140px;
+    height: auto;
+  }
+
+  .responsive-img {
+    width: 100%;
+    height: auto;
+    display: block; /* чтобы не было лишних пробелов */
+    object-fit: contain; /* сохраняет пропорции */
+  }
 }
